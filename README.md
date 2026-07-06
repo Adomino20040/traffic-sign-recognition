@@ -9,7 +9,7 @@ This project targets the computer-vision / perception engineering skills used in
 Work in progress. Currently in **Phase 1 (Foundation)** of a 12-week roadmap.
 
 - [x] Week 1 — Development environment & project setup
-- [ ] Week 2 — Machine learning fundamentals
+- [x] Week 2 — Machine learning fundamentals
 - [ ] Week 3 — Deep learning & CNNs (MNIST)
 - [ ] Weeks 4-8 — Traffic Sign Recognition (this repo's main deliverable)
 
