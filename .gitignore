@@ -1,0 +1,27 @@
+# Data
+data/
+
+# Python
+*.pyc
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Model checkpoints (large binaries)
+*.pt
+*.pth
+*.onnx
+
+# Virtual environment
+.venv/
+venv/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Outputs (keep the folder, ignore heavy artifacts if needed)
+outputs/*.log
