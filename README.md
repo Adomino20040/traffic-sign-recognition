@@ -15,11 +15,7 @@ Work in progress. Currently in **Phase 1 (Foundation)** of a 12-week roadmap.
 
 ## Tech Stack
 
-- **Python 3.12**
-- **PyTorch** + **TorchVision** — deep learning & pretrained models
-- **OpenCV** — camera capture and image processing
-- **NumPy / Pandas / Matplotlib / Seaborn** — data handling & visualization
-- **Jupyter** — exploration and prototyping
+The project uses **Python 3.12** with **PyTorch** and **TorchVision** for deep learning, **OpenCV** for camera capture and image processing, **NumPy / Pandas / Matplotlib / Seaborn** for data handling and visualization, and **Jupyter** for exploration and prototyping.
 
 ## Project Structure
 
@@ -37,34 +33,41 @@ traffic-sign-recognition/
 
 ## Setup
 
-1. Clone the repository:
-   ```bash
-   git clone <your-repo-url>
-   cd traffic-sign-recognition
-   ```
-2. Create and activate a virtual environment (Python 3.12):
-   ```bash
-   python -m venv .venv
-   # Windows
-   .venv\Scripts\activate
-   # macOS / Linux
-   source .venv/bin/activate
-   ```
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. Verify the setup:
-   ```bash
-   python test_setup.py
-   ```
+Start by cloning the repo:
+
+```bash
+git clone <your-repo-url>
+cd traffic-sign-recognition
+```
+
+Create a virtual environment with Python 3.12 and activate it:
+
+```bash
+python -m venv .venv
+# Windows
+.venv\Scripts\activate
+# macOS / Linux
+source .venv/bin/activate
+```
+
+Install the dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Then verify everything works:
+
+```bash
+python test_setup.py
+```
 
 ## Datasets
 
-The `data/` folder is gitignored — datasets are not included in this repo. To run the notebooks:
+The `data/` folder is gitignored, so datasets are not included in this repo. Here's how they work:
 
-- **MNIST** (used in `notebooks/02_mnist_cnn.ipynb`): no manual download needed. The notebook downloads it automatically into `data/` on first run via `torchvision.datasets.MNIST(download=True)`.
-- **GTSRB** (main project, upcoming): [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. 43 classes, real-world conditions (varying lighting, occlusion, rotation). Download instructions will be added when the traffic sign work begins.
+- **MNIST** (used in `notebooks/02_mnist_cnn.ipynb`) doesn't need a manual download. The notebook pulls it automatically into `data/` on first run through `torchvision.datasets.MNIST(download=True)`.
+- **GTSRB** is the main dataset for this project — [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. It has 43 classes shot in real-world conditions (varying lighting, occlusion, rotation). Download instructions will be added once the traffic sign work starts.
 
 ## License
 
