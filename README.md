@@ -59,9 +59,12 @@ traffic-sign-recognition/
    python test_setup.py
    ```
 
-## Dataset
+## Datasets
 
-[GTSRB — German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. 43 classes, real-world conditions (varying lighting, occlusion, rotation).
+The `data/` folder is gitignored — datasets are not included in this repo. To run the notebooks:
+
+- **MNIST** (used in `notebooks/02_mnist_cnn.ipynb`): no manual download needed. The notebook downloads it automatically into `data/` on first run via `torchvision.datasets.MNIST(download=True)`.
+- **GTSRB** (main project, upcoming): [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. 43 classes, real-world conditions (varying lighting, occlusion, rotation). Download instructions will be added when the traffic sign work begins.
 
 ## License
 
