@@ -66,8 +66,8 @@ python test_setup.py
 
 The `data/` folder is gitignored, so datasets are not included in this repo. Here's how they work:
 
-- **MNIST** (used in `notebooks/02_mnist_cnn.ipynb`) doesn't need a manual download. The notebook pulls it automatically into `data/` on first run through `torchvision.datasets.MNIST(download=True)`.
-- **GTSRB** is the main dataset for this project — [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. It has 43 classes shot in real-world conditions (varying lighting, occlusion, rotation). Download instructions will be added once the traffic sign work starts.
+- **MNIST** (used in `notebooks/02_mnist_mlp.ipynb`) doesn't need a manual download. The notebook pulls it automatically into `data/` on first run through `torchvision.datasets.MNIST(download=True)`.
+- **GTSRB** is the main dataset for this project — [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. It has 43 classes shot in real-world conditions (varying lighting, occlusion, rotation). Like MNIST, it downloads automatically into `data/` on first run through `torchvision.datasets.GTSRB(download=True)` (used in `notebooks/03_gtsrb_cnn.ipynb`).
 
 ## License
 
