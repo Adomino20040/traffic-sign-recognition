@@ -10,8 +10,9 @@ Work in progress. Currently in **Phase 1 (Foundation)** of a 12-week roadmap.
 
 - [x] Week 1 — Development environment & project setup
 - [x] Week 2 — Machine learning fundamentals
-- [x] Week 3 — Deep learning & CNNs (MNIST) — 97% test accuracy on handwritten digits
-- [ ] Weeks 4-8 — Traffic Sign Recognition (this repo's main deliverable)
+- [x] Week 3 — Deep learning fundamentals (MNIST, fully-connected net) — 97% test accuracy on handwritten digits
+- [x] Week 4 — First CNN on GTSRB — **91.15% test accuracy** (vs 72.4% MLP baseline), with data augmentation and best-epoch checkpointing
+- [ ] Weeks 5-8 — Traffic Sign Recognition improvements (this repo's main deliverable)
 
 ## Tech Stack
 
