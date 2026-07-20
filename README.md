@@ -13,11 +13,13 @@ This project targets the computer-vision / perception engineering skills used in
 - [x] Weeks 5-6 — Production scripts (`model.py`, `predict.py`, `webcam_demo.py`) + real-time webcam demo with snapshot saving
 - [ ] Weeks 7-8 — Accuracy improvements (transfer learning, hyperparameter tuning)
 
+## Demo
+
 <img src="docs/stop_sign_demo.png" width="400">
-*Stop sign detected at 99.97% confidence*
+Stop sign at 99.97% confidence
 
 <img src="docs/turn_left_demo.png" width="400">
-*Turn left ahead sign detected at 93.32% confidence*
+Turn left ahead sign at 93.32% confidence
 
 ## Tech Stack
 
