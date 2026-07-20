@@ -8,41 +8,51 @@ from PIL import Image
 transform = v2.Compose([
     v2.Resize((32, 32)),
     v2.ToImage(),
-    v2.ToDtype(torch.float32, scale = True),
-    v2.Normalize(mean = [0.485, 0.456, 0.406], std = [0.229, 0.224, 0.225])
+    v2.ToDtype(torch.float32, scale=True),
+    v2.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
+
 
 def main():
     model = load_model()
-    capture = cv2.VideoCapture(0)
+    capture = cv2.VideoCapture(0)   # 0 = built-in webcam, try 1 for external
     snap_count = 0
+
     if not capture.isOpened():
-        print("Error: Could not open webcam.")
+        print("Camera not found.")
         return
+
     while True:
         ret, frame = capture.read()
         if not ret:
             break
+
+        # OpenCV reads BGR by default, model expects RGB
         image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
         image = transform(image).unsqueeze(0)
+
         with torch.no_grad():
             outputs = model(image)
             _, predicted = torch.max(outputs, 1)
             probs = torch.nn.functional.softmax(outputs, dim=1)
-            cv2.putText(frame, f"{GTSRB_CLASSES[predicted.item()]}: {probs[0, predicted.item()].item():.4f}", (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
-            cv2.imshow("Webcam", frame)
-            key = cv2.waitKey(1)
-            if key == 27:
-                break
-            elif key == ord('s'):
-                snap_count += 1
-                cv2.imwrite(f"outputs/demo_capture_{snap_count}.png", frame)
-                print(f"Snapshot saved: demo_capture_{snap_count}.png")
+            label = f"{GTSRB_CLASSES[predicted.item()]}: {probs[0, predicted.item()].item():.4f}"
+            cv2.putText(frame, label, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+            cv2.imshow("Traffic Sign Recognition", frame)
+
+        key = cv2.waitKey(1)
+        if key == 27:     # ESC quits
+            break
+        elif key == ord('s'):   # S saves a snapshot
+            snap_count += 1
+            cv2.imwrite(f"outputs/demo_capture_{snap_count}.png", frame)
+            print(f"Saved outputs/demo_capture_{snap_count}.png")
+
     capture.release()
-    cv2.destroyAllWindows()    
+    cv2.destroyAllWindows()
 
 
 if __name__ == "__main__":
     main()
+
 
     

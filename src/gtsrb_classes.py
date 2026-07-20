@@ -1,3 +1,4 @@
+# maps class id (0-42) to sign names so the model's number output becomes readable text
 GTSRB_CLASSES = [
     "Speed limit 20 km/h",
     "Speed limit 30 km/h",
