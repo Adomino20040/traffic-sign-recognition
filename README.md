@@ -6,13 +6,12 @@ This project targets the computer-vision / perception engineering skills used in
 
 ## Status
 
-Work in progress. Currently in **Phase 1 (Foundation)** of a 12-week roadmap.
-
 - [x] Week 1 — Development environment & project setup
 - [x] Week 2 — Machine learning fundamentals
 - [x] Week 3 — Deep learning fundamentals (MNIST, fully-connected net) — 97% test accuracy on handwritten digits
 - [x] Week 4 — First CNN on GTSRB — **91.15% test accuracy** (vs 72.4% MLP baseline), with data augmentation and best-epoch checkpointing
-- [ ] Weeks 5-8 — Traffic Sign Recognition improvements (this repo's main deliverable)
+- [x] Weeks 5-6 — Production scripts: `model.py`, `predict.py` and real-time webcam inference (`webcam_demo.py`)
+- [ ] Weeks 7-8 — Accuracy improvements (transfer learning, hyperparameter tuning)
 
 ## Tech Stack
 
@@ -23,7 +22,14 @@ The project uses **Python 3.12** with **PyTorch** and **TorchVision** for deep l
 ```
 traffic-sign-recognition/
 ├── notebooks/        # Jupyter notebooks for exploration
+│   ├── 01_first_classifier.ipynb
+│   ├── 02_mnist_mlp.ipynb
+│   └── 03_gtsrb_cnn.ipynb
 ├── src/              # Production Python scripts
+│   ├── model.py          # ConvNet definition + model loader
+│   ├── predict.py        # Single-image prediction
+│   ├── webcam_demo.py    # Real-time webcam inference
+│   └── gtsrb_classes.py  # 43 class names for display
 ├── models/           # Saved model checkpoints (gitignored)
 ├── data/             # Dataset (gitignored)
 ├── outputs/          # Figures, logs, results
@@ -69,6 +75,22 @@ The `data/` folder is gitignored, so datasets are not included in this repo. Her
 
 - **MNIST** (used in `notebooks/02_mnist_mlp.ipynb`) doesn't need a manual download. The notebook pulls it automatically into `data/` on first run through `torchvision.datasets.MNIST(download=True)`.
 - **GTSRB** is the main dataset for this project — [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. It has 43 classes shot in real-world conditions (varying lighting, occlusion, rotation). Like MNIST, it downloads automatically into `data/` on first run through `torchvision.datasets.GTSRB(download=True)` (used in `notebooks/03_gtsrb_cnn.ipynb`).
+
+## Usage
+
+### Real-time webcam demo
+
+```bash
+python src/webcam_demo.py
+```
+
+Press `q` in the window to quit.
+
+### Predict a single image
+
+```bash
+python src/predict.py path/to/sign.jpg
+```
 
 ## License
 
