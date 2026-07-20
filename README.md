@@ -15,11 +15,16 @@ This project targets the computer-vision / perception engineering skills used in
 
 ## Demo
 
-<img src="docs/stop_sign_demo.png" width="400">
-Stop sign at 99.97% confidence
-
-<img src="docs/turn_left_demo.png" width="400">
-Turn left ahead sign at 93.32% confidence
+<table>
+  <tr>
+    <td><img src="docs/stop_sign_demo.png" width="350"></td>
+    <td><img src="docs/turn_left_demo.png" width="350"></td>
+  </tr>
+  <tr>
+    <td align="center">Stop sign at 99.97% confidence</td>
+    <td align="center">Turn left ahead sign at 93.32% confidence</td>
+  </tr>
+</table>
 
 ## Tech Stack
 
