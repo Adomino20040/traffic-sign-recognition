@@ -3,24 +3,17 @@ from pathlib import Path
 
 import torch
 from PIL import Image
-from torchvision.transforms import v2
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from src.model import load_model
+from src.transforms import GTSRB_TRANSFORM
 from src.gtsrb_classes import GTSRB_CLASSES
-
-transform = v2.Compose([
-    v2.Resize((32, 32)),
-    v2.ToImage(),
-    v2.ToDtype(torch.float32, scale=True),
-    v2.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
-])
 
 
 def predict_image(model, image_path):
     img = Image.open(image_path).convert("RGB")
-    input_tensor = transform(img).unsqueeze(0)
+    input_tensor = GTSRB_TRANSFORM(img).unsqueeze(0)
 
     with torch.no_grad():
         outputs = model(input_tensor)
