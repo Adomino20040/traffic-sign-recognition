@@ -26,5 +26,6 @@ Portfolio_Roadmap.pdf
 .DS_Store
 Thumbs.db
 
-# Outputs (keep the folder, ignore heavy artifacts if needed)
-outputs/*.log
+# Outputs: keep the folder but ignore generated files
+outputs/*
+!outputs/.gitkeep
