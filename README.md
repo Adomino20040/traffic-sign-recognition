@@ -1,17 +1,17 @@
 # Traffic Sign Recognition
 
-A real-time German traffic sign classifier built with deep learning. The system takes a webcam feed and identifies traffic signs as they appear, using a convolutional neural network fine-tuned on the **German Traffic Sign Recognition Benchmark (GTSRB)** — 50,000+ images across 43 sign classes.
+A real-time German traffic sign classifier built with deep learning. The system takes a webcam feed and identifies traffic signs as they appear, using a convolutional neural network fine-tuned on the **German Traffic Sign Recognition Benchmark (GTSRB)**, a dataset of 50,000+ images across 43 sign classes.
 
 This project targets the computer-vision / perception engineering skills used in automotive AI (autonomous driving, driver-assistance systems).
 
 ## Status
 
-- [x] Week 1 — Development environment & project setup
-- [x] Week 2 — Machine learning fundamentals
-- [x] Week 3 — Deep learning fundamentals (MNIST, fully-connected net) — 97% test accuracy on handwritten digits
-- [x] Week 4 — First CNN on GTSRB — **91.15% test accuracy** (vs 72.4% MLP baseline), with data augmentation and best-epoch checkpointing
-- [x] Weeks 5-6 — Production scripts (`model.py`, `predict.py`, `webcam_demo.py`) + real-time webcam demo with snapshot saving
-- [ ] Weeks 7-8 — Accuracy improvements (transfer learning, hyperparameter tuning)
+- [x] Week 1: Development environment and project setup
+- [x] Week 2: Machine learning fundamentals
+- [x] Week 3: Deep learning fundamentals. MNIST with a fully-connected net, 97% test accuracy on handwritten digits
+- [x] Week 4: First CNN on GTSRB, **91.15% test accuracy** (vs 72.4% MLP baseline) with data augmentation and best-epoch checkpointing
+- [x] Weeks 5-6: Production scripts (`model.py`, `predict.py`, `webcam_demo.py`) and real-time webcam demo with snapshot saving
+- [ ] Weeks 7-8: Accuracy improvements (transfer learning, hyperparameter tuning)
 
 ## Demo
 
@@ -101,7 +101,7 @@ Press **S** to save a snapshot, **ESC** to quit.
 The `data/` folder is gitignored, so datasets are not included in this repo. Here's how they work:
 
 - **MNIST** (used in `notebooks/02_mnist_mlp.ipynb`) doesn't need a manual download. The notebook pulls it automatically into `data/` on first run through `torchvision.datasets.MNIST(download=True)`.
-- **GTSRB** is the main dataset for this project — [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. It has 43 classes shot in real-world conditions (varying lighting, occlusion, rotation). Like MNIST, it downloads automatically into `data/` on first run through `torchvision.datasets.GTSRB(download=True)` (used in `notebooks/03_gtsrb_cnn.ipynb`).
+- **GTSRB** is the main dataset for this project: the [German Traffic Sign Recognition Benchmark](https://benchmark.ini.rub.de/gtsrb_news.html), collected by the Institut für Neuroinformatik, Ruhr-Universität Bochum. It has 43 classes shot in real-world conditions (varying lighting, occlusion, rotation). Like MNIST, it downloads automatically into `data/` on first run through `torchvision.datasets.GTSRB(download=True)` (used in `notebooks/03_gtsrb_cnn.ipynb`).
 
 ## License
 
